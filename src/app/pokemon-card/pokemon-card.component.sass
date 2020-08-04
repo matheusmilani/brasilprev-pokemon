@@ -1,0 +1,63 @@
+.back
+  background: red
+  border: 10px solid black
+  padding: 15px
+  a
+    color: white
+
+.card
+  padding: 30px
+  border: 15px solid black
+  border-radius: 0
+  height: calc(100vh - 65px)
+  text-align: center
+  img
+    position: relative
+    height: 100%
+    max-width: 100%
+    margin: auto
+    box-shadow: 0 0 10px black
+
+.pokemon-detail
+  padding: 30px
+  border: 15px solid black
+  border-radius: 0
+  line-height: .8em
+  height: calc(100vh - 65px)
+  .pokemon-name
+    span
+      font-size: .5em
+      float: right
+      &::before
+        content: 'Nº'
+        font-size: .8em
+
+.card-Grass, .card-Fairy, .card-Colorless, .card-Lightning, .card-Psychic
+  background: url('../../assets/grass-bg.png')
+  background-position: center
+  background-size: cover
+
+.card-Darkness
+  background: url('../../assets/night-bg.png')
+  background-position: center
+  background-size: cover
+
+.card-Dragon
+  background: url('../../assets/fly-bg.png')
+  background-position: center
+  background-size: cover
+
+.card-Fighting, .card-Metal
+  background: url('../../assets/rock-bg.jpg')
+  background-position: center
+  background-size: cover
+
+.card-Fire
+  background: url('../../assets/fire-bg.png')
+  background-position: center
+  background-size: cover
+
+.card-Water
+  background: url('../../assets/water-bg.jpg')
+  background-position: center
+  background-size: cover

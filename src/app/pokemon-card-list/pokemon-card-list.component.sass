@@ -1,0 +1,46 @@
+.load
+  width: 100%
+  text-align: center
+  img
+    width: 200px
+
+.filters
+  background: red
+  height: 100vh
+
+img.logo
+    width: calc(100% - 30px)
+    margin: 30px 15px
+
+.form-group
+  background: white
+  margin: 15px
+  margin-top: 0
+
+.multiselect-dropdown
+  margin: 15px !important
+  width: calc(100% - 30px) !important
+
+.cards-template
+  height: 100vh
+  overflow: auto
+  border: 30px solid red
+  .screen
+    border: 15px solid black
+    height: calc(100vh - 60px)
+    overflow: auto
+    padding: 15px
+
+  .card-columns
+    column-count: 4
+
+@media (max-width: 760px)
+  .filters
+    height: 25vh
+
+  .cards-template
+    height: 75vh
+    .screen
+      height: calc(75vh - 60px)
+    .card-columns
+      column-count: 2

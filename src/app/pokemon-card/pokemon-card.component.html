@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-12 p-0 m-0">
+    <div class="back">
+      <a [routerLink]="['/cards']">Voltar</a>
+    </div>
+  </div>
+    <ng-template #loading>
+      <div class="col">
+      <div><img src="../../assets/pokemon.gif"></div>
+    </div>
+    </ng-template>
+
+  <ng-container *ngIf="loaded else loading">
+    <div class="col col-md-6 p-0 m-0">
+      <div class="card card-{{card.types[0]}}">
+        <img src={{card.imageUrlHiRes}}>
+      </div>
+    </div>
+
+    <div class="col col-md-6 p-0 m-0">
+      <div class="pokemon-detail">
+        <h1 class="pokemon-name">{{card.name}} <span>{{card.nationalPokedexNumber}}</span></h1>
+        <p class="pokemon-rarity">{{card.rarity}}</p>
+        <hr>
+        <div class="row">
+            <div class="col">
+              <h2>Resistência</h2>
+              <p *ngFor="let resistance of card.resistances">{{resistance.type}} - {{resistance.value}}</p>
+            </div>
+            <div class="col">
+              <h2>Fraqueza</h2>
+              <p *ngFor="let weakness of card.weaknesses">{{weakness.type}} - {{weakness.value}}</p>
+            </div>
+        </div>
+        <hr>
+        <div class="attack" *ngFor="let attack of card.attacks">
+          <p>{{attack.name}} - {{attack.damage}}</p>
+          <p>{{attack.text}}</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+</div>

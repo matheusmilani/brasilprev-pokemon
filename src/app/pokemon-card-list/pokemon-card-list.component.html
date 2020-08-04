@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-sm-12 col-md-3 p-0 m-0">
+    <div class="filters">
+      <img src="../../assets/pokemon.png" alt="" class="logo">
+      <div class="form-group">
+        <input type="text" (change)="searchByName($event)" class="form-control" placeholder="Nome">
+      </div>
+      <div class="form-group">
+        <ng-multiselect-dropdown
+        [placeholder]="'Tipo'"
+        [data]="dropdownTypes"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event, 'type')"
+        (onSelectAll)="onSelectAll($event, 'type')"
+        (onDeSelect)="onItemDeSelect($event, 'type')"
+        (onDeSelectAll)="onDeSelectAll($event, 'type')"
+        >
+      </ng-multiselect-dropdown>
+      </div>
+
+      <div class="form-group">
+        <ng-multiselect-dropdown
+        [placeholder]="'Subtipo'"
+        [data]="dropdownSubTypes"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event, 'subType')"
+        (onSelectAll)="onSelectAll($event, 'subType')"
+        (onDeSelect)="onItemDeSelect($event, 'subType')"
+        (onDeSelectAll)="onDeSelectAll($event, 'subType')"
+        >
+      </ng-multiselect-dropdown>
+      </div>
+
+      <div class="form-group">
+        <ng-multiselect-dropdown
+        [placeholder]="'Supertipo'"
+        [data]="dropdownSuperTypes"
+        [settings]="dropdownSettings"
+        (onSelect)="onItemSelect($event, 'superType')"
+        (onSelectAll)="onSelectAll($event, 'superType')"
+        (onDeSelect)="onItemDeSelect($event, 'superType')"
+        (onDeSelectAll)="onDeSelectAll($event, 'superType')"
+        >
+      </ng-multiselect-dropdown>
+      </div>
+    </div>
+  </div>
+  <div class="col p-0 m-0">
+      <div class="cards-template">
+        <div class="screen">
+          <ng-container *ngIf="loaded else loading">
+          <div class="card-columns">
+            <div class="card" *ngFor="let card of cards">
+              <a (click)="goToCard(card.id)"><img src={{card.imageUrl}} class="card-img"></a>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #loading>
+            <div class="load"><img src="../../assets/pokemon.gif"></div>
+        </ng-template>
+        </div>
+      </div>
+  </div>
+</div>
